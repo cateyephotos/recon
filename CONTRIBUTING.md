@@ -27,7 +27,7 @@ git diff --cached --check
 
 Resolve changed relative links and compare affected examples with the skill implementation. For behavior changes, follow the [manual smoke test](README.md#testing) in a scratch project with an authorized public research target. Report the host used, what was checked, and any checks not run. A text check does not prove host execution.
 
-There is no automated lint, typecheck, or test suite. CI is intentionally deferred because of billing problems; do not wait for nonexistent checks or enable automation without the owner's approval. See the [automation status](.github/README.md).
+There is no automated lint, typecheck, or test suite. CI is intentionally deferred because of billing problems; do not wait for nonexistent checks or enable automation without the owner's approval. See the [automation status](.github/AUTOMATION.md).
 
 ## Pull requests and issues
 

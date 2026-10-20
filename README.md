@@ -1,6 +1,6 @@
-# Recon — Competitive Intelligence Skill for Claude Code
-
 ![Recon: See beyond the surface. A futuristic robotic owl examines holographic structures.](assets/recon-readme.png)
+
+# Recon — Competitive Intelligence Skill for Claude Code
 
 A Claude Code skill that runs deep competitive intelligence reconnaissance on any target — websites, products, tools, or competitors. It tears through business intel, tech stacks, APIs, communities, infrastructure, security posture, and more.
 
