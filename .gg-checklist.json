@@ -49,6 +49,23 @@
         "git diff --check passed. No skill loaded for this documentation re-check.",
         "Not checked: Live installation, host command discovery, external research, or manual smoke-test execution; no broader documentation re-audit."
       ]
+    },
+    "naming": {
+      "checkedAt": "2026-10-20T03:03:42.403Z",
+      "commit": "71dfac7",
+      "uncommittedChanges": true,
+      "result": "pass",
+      "summary": "Rechecked all three approved findings: glossary and discovery links exist, CSV tables are distinguished from the comparison matrix, and the historical licensing decision is recorded in ADR-001.",
+      "findings": [],
+      "evidence": [
+        "Scope: Re-check only the three recorded shared-vocabulary findings and the directly affected documentation links.",
+        "Loaded shared-language and adr-writing-stinger; created CONTEXT.md with 22 definitions and added its CLAUDE.md pointer and README/Library links.",
+        "Verified profile/framework and diff/comparison edge cases, 23 local links/anchors, glossary structure, and ADR frontmatter/required sections.",
+        "Verified ADR-001 date and quoted rationale against commit 9230782; former MIT text and current LICENSE sections 2, 4 and 5 were read.",
+        "Exact source comparison passed: SKILL.md changes only the comparison.csv label to CSV export tables; filenames and output triggers are untouched.",
+        "LICENSE matches HEAD byte-for-byte; related architecture text now acknowledges ADR-001; git diff --check passed.",
+        "Not checked: Host execution, legal review or external URL availability. No runtime suite exists. No unrelated checklist items were re-audited."
+      ]
     }
   }
 }

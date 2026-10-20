@@ -128,7 +128,7 @@ recon-reports/
 ├── competitor-name/
 │   ├── RECON_REPORT.md          # Full report
 │   ├── RECON_REPORT.json        # Structured data (if --format json)
-│   ├── comparison.csv           # Tables (if --format csv)
+│   ├── comparison.csv           # CSV export tables (if --format csv)
 │   ├── metadata.json            # Run metadata (date, flags, target type)
 │   ├── DIFF_REPORT.md           # Changes since last scan (if --diff)
 │   └── previous/               # Previous reports for diffing
@@ -199,6 +199,7 @@ Phase 3 uses modular compliance profiles. Pick individual frameworks, use a pres
 
 ## Documentation Library
 
+- [Shared glossary](CONTEXT.md): canonical terms for research scope, compliance selections, and reports.
 - [Library guide](library/README.md): documentation layout and ownership.
 - [Recon workflow](library/knowledge/private/architecture/recon-workflow.md): source-grounded phases, report flow, and known ambiguities.
 - [Usage and maintenance](library/knowledge/private/operations/recon-usage.md): installation, invocation, and manual verification.
@@ -215,7 +216,7 @@ The workflow diagram documents skill instructions, not an extracted function/cal
 
 GPL-3.0 License - Copyright (c) 2026 AutomationGod
 
-See [LICENSE](LICENSE) for details.
+See [LICENSE](LICENSE) for details and [ADR-001](library/knowledge/private/architecture/ADR-001-gpl-3-licensing.md) for the recorded MIT-to-GPL decision.
 
 If you modify or redistribute this skill, you must:
 - Keep the original copyright and credit

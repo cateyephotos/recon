@@ -5,6 +5,8 @@ Recon is an agent skill for competitive research, technical teardown, and build-
 
 `skills/recon/SKILL.md` is the implementation: YAML frontmatter exposes `/recon`, and the Markdown body defines argument handling, research phases, compliance modules, and report contracts. This checkout is not a Python application despite inherited context; it has no runtime, dependency manifest, test suite, or build/deploy pipeline. `/recon` is a host-agent command, not a shell executable.
 
+Read CONTEXT.md before naming anything.
+
 ## Cross-section contracts and traps
 
 - Research phases 1–2 examine external targets; `/recon --phases 3,4,5` supports targetless build hardening, and Phase 5 concerns the user's own build. Do not make an external URL mandatory for every invocation.

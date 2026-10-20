@@ -136,7 +136,7 @@ recon-reports/
 ├── [target-name]/
 │   ├── RECON_REPORT.md          # Full structured report (markdown)
 │   ├── RECON_REPORT.json        # Structured data (if --format json)
-│   ├── comparison.csv           # Comparison matrix (if --format csv or multiple targets)
+│   ├── comparison.csv           # CSV export tables (if --format csv or multiple targets)
 │   ├── metadata.json            # Run metadata (date, flags, phases, target type)
 │   └── previous/               # Previous reports (for --diff mode)
 │       └── RECON_REPORT_2026-02-24.md

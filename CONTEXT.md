@@ -1,0 +1,24 @@
+# Recon glossary
+
+- **Recon**: The host-agent skill for competitive research, technical teardown, and build hardening. Avoid: calling it a standalone application or shell executable.
+- **Host**: The agent environment that interprets Recon's instructions and supplies its tools and model execution.
+- **Invoking project**: The project in which a Recon run is requested and its reports are saved. It is not necessarily the repository containing the skill's source.
+- **Target**: An external website, product, service, or project being researched. Avoid: treating every target as a competitor, or requiring an external target for build hardening.
+- **Own build**: The user's product or project being assessed for launch readiness and protection. Avoid: confusing it with an external research target.
+- **Build hardening**: Assessment of the own build through selected security, pre-launch, and IP-protection phases; it can run without an external target.
+- **Run**: One invocation of Recon with a selected scope. A run may examine several targets or assess the own build without an external target.
+- **Phase**: A numbered stage of the Recon pipeline. Phase selection determines which stages are requested; it is distinct from research depth.
+- **Depth**: The breadth and detail requested for research. Quick mode narrows the run to a surface-level Phase 1 scan; deep mode describes the full pipeline unless phases are explicitly selected.
+- **Framework**: A named compliance, privacy, or security standard evaluated by Phase 3. Avoid: using framework and profile as interchangeable terms.
+- **Profile**: An individual compliance selector that maps to framework coverage. One profile can cover several frameworks: `hipaa` includes HIPAA and HITRUST; `fedramp` includes FedRAMP and NIST 800-53; `nist` selects NIST CSF.
+- **Bundle**: A named preset selection of compliance coverage, such as `healthcare` or `government`. Avoid: calling a preset bundle an individual profile.
+- **All selector**: The `all` compliance selection, which requests every supported framework.
+- **Shared Foundation**: The common security assessment performed before the selected Phase 3 compliance modules.
+- **Module**: A framework-specific instruction section within Phase 3. Avoid: treating a module as a separately executable software package.
+- **Recon report**: The primary Markdown assessment for one target or own-build scope. It remains required when supplemental export formats are requested.
+- **Baseline**: The previous report used to compare a new assessment of the same target. It is distinct from the new report and from a different target's report.
+- **Diff report**: A report of changes between assessments of the same target over time. Avoid: using it to mean a comparison between different targets.
+- **Comparison matrix**: The cross-target comparison produced after individual reports for at least two targets are complete. Avoid: using it as a generic name for CSV export tables.
+- **CSV export tables**: Supplemental tabular output, such as pricing, features, or stack data. They do not replace the primary Markdown report or the cross-target comparison matrix.
+- **Run metadata**: Structured details about an invocation, such as flags, phases, date, and target type. Avoid: treating metadata alone as proof that compliance scope or report contents are equivalent.
+- **Wiki**: Derived source-linked documentation. Recon's current wiki contains filename-only stubs for unsupported Markdown extraction, not an extracted function/call graph.

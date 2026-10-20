@@ -8,4 +8,4 @@ human_description: |
 
 # Overview
 
-No public overview page is seeded. Add approved content when needed, following the audience rules in the [public knowledge index](../README.md).
+The [shared glossary](../../../../CONTEXT.md) defines Recon's domain vocabulary. No separate public overview page is seeded. Add approved content when needed, following the audience rules in the [public knowledge index](../README.md).

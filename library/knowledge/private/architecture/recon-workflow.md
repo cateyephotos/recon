@@ -15,7 +15,7 @@ For maintainers, this document explains Recon's instruction-defined workflow, re
 
 Recon turns a host-agent research request into persistent reports rather than a chat-only answer. Its implementation is `skills/recon/SKILL.md`: YAML frontmatter declares an invocable skill and allowed tools, while Markdown tells the host how to research and report. It is not a software application or shell executable (`skills/recon/SKILL.md:1-16`, `1266-1275`; `README.md:113-118`).
 
-The inspected repository has no application runtime, dependency manifest, automated tests, build or deployment pipeline. Phase 4 discusses the user's launch readiness, not a deployment mechanism shipped by Recon. No ADRs or PRDs exist for this work; these pages describe inspected instructions, not invented architecture decisions or proof of execution.
+The inspected repository has no application runtime, dependency manifest, automated tests, build or deployment pipeline. Phase 4 discusses the user's launch readiness, not a deployment mechanism shipped by Recon. The historical licensing choice is recorded in [ADR-001](ADR-001-gpl-3-licensing.md). No PRDs or runtime guarantees are implied; this workflow describes inspected instructions, not proof of execution.
 
 ## Scope and phase contracts
 
