@@ -1,0 +1,6 @@
+# Repository owner confirmed from g-baskin/recon on GitHub.
+# Required approval needs a separate branch rule or ruleset.
+*                       @g-baskin
+/.github/               @g-baskin
+/.github/CODEOWNERS      @g-baskin
+/.github/workflows/      @g-baskin

@@ -34,7 +34,8 @@ Copy the skill folder into your Claude Code skills directory:
 # Clone this repo
 git clone https://github.com/g-baskin/recon.git
 
-# Copy the skill to your Claude Code skills directory
+# Create the destination parent, then copy the skill
+mkdir -p ~/.claude/skills
 cp -r recon/skills/recon ~/.claude/skills/recon
 ```
 
@@ -106,6 +107,15 @@ cp -r /path/to/recon/skills/recon .claude/skills/recon
 ```
 I just saw [tool/website/product] — what is this? Full breakdown.
 ```
+
+## Testing
+
+This repository has no automated test suite or build step. To smoke-test the installed skill manually:
+
+1. Restart Claude Code after installation and open a scratch project so reports do not affect existing research.
+2. Run `/recon --quick <target-url>` in Claude Code, replacing `<target-url>` with a public website you are authorized to research. This uses the host's web tools and model usage, not a shell executable.
+3. Confirm that `recon-reports/[target-name]/RECON_REPORT.md` and `metadata.json` are created in that project. The report should cover the quick-scan scope: product overview, pricing summary, top three competitors, and basic tech stack. Metadata should record quick depth and Phase 1 only.
+4. Confirm the chat summary points to the saved report. Failure to recognize `/recon` indicates an installation or host-discovery problem; unavailable web tools prevent a complete research smoke test.
 
 ## Output
 
@@ -184,6 +194,15 @@ Phase 3 uses modular compliance profiles. Pick individual frameworks, use a pres
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI installed and configured
 - WebSearch and WebFetch tools available (included with Claude Code)
 - Optional: Reddit MCP server for deeper community research
+
+## Documentation Library
+
+- [Library guide](library/README.md): documentation layout and ownership.
+- [Recon workflow](library/knowledge/private/architecture/recon-workflow.md): source-grounded phases, report flow, and known ambiguities.
+- [Usage and maintenance](library/knowledge/private/operations/recon-usage.md): installation, invocation, and manual verification.
+- [Partial wiki coverage](library/knowledge/private/codebase-graph/meta/2026-10-19-coverage-report.md): source-file stubs and extraction limits.
+
+The workflow diagram documents skill instructions, not an extracted function/call graph. Markdown extraction and a graph driver are unavailable in this checkout, so wiki coverage is explicitly partial.
 
 ## License
 

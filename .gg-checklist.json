@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "items": {
+    "agent-setup": {
+      "checkedAt": "2026-10-20T02:15:19.732Z",
+      "commit": "0c50054",
+      "uncommittedChanges": true,
+      "result": "pass",
+      "summary": "CLAUDE.md now documents the skill-only project and cross-section contracts; the repository contains its recurring reconnaissance skill.",
+      "findings": [],
+      "evidence": [
+        "Scope: Root context accuracy and local skill coverage for this Markdown-based reconnaissance project.",
+        "Read CLAUDE.md and skills/recon/SKILL.md sections covering invocation, phases, compliance, report storage, and diffs.",
+        "git ls-files and find .gg skills: recon skill exists; no application manifest, tests, CI, or build/deploy pipeline found.",
+        "wc -c CLAUDE.md: 2178 bytes; reread generated block; no prior root context or redundant lines to remove.",
+        "Not checked: Installed host skill discovery, live /recon execution, external research tools, or report generation."
+      ]
+    },
+    "ci": {
+      "checkedAt": "2026-10-20T02:33:59.933Z",
+      "commit": "0c50054",
+      "uncommittedChanges": true,
+      "result": "pass",
+      "summary": "CI remains unconfigured by explicit owner choice for billing; no workflows were added or activated. This records the deferral, not a passing CI run.",
+      "findings": [],
+      "accepted": [
+        "CI automation is absent and intentionally deferred by the owner because of billing problems; enable only after renewed approval."
+      ],
+      "evidence": [
+        "Scope: CI presence and preservation of the owner's billing hold during Get Started baseline setup.",
+        "gh api repos/g-baskin/recon/actions/workflows returned total_count: 0.",
+        "Local assertions confirmed no .github workflow YAML; .github/README.md documents the billing hold and later approval requirement.",
+        "Loaded get-started-stinger; omitted CI, CodeQL, release jobs, and dependency automation.",
+        "Not checked: Workflow execution, billing balances, repository-wide Actions permissions, branch protection, or other repository security settings."
+      ]
+    },
+    "docs": {
+      "checkedAt": "2026-10-20T02:19:51.328Z",
+      "commit": "0c50054",
+      "uncommittedChanges": true,
+      "result": "pass",
+      "summary": "Rechecked and resolved both recorded documentation findings: installation creates its parent directory, and README documents manual testing and expected outputs.",
+      "findings": [],
+      "evidence": [
+        "Scope: Re-check only the two previously recorded README installation and testing-guidance findings after owner-approved fixes.",
+        "Read README.md:29-51: mkdir -p ~/.claude/skills precedes the global copy command.",
+        "Read README.md:111-118: states no automated suite and describes manual quick-scan verification and expected report/metadata output.",
+        "Python documentation assertions passed; bash -n passed for both installation snippets without executing them.",
+        "git diff --check passed. No skill loaded for this documentation re-check.",
+        "Not checked: Live installation, host command discovery, external research, or manual smoke-test execution; no broader documentation re-audit."
+      ]
+    }
+  }
+}
