@@ -57,7 +57,7 @@ These examples are host inputs, not Bash commands; replace the sample research U
 
 Quick mode limits Phase 1 to a product overview, pricing summary, three competitors and basic stack. Phase 3 runs the Shared Foundation before selected modules, defaulting to GDPR/SOC 2/OWASP. `hipaa` already includes HITRUST; `fedramp` includes NIST 800-53; `nist` means NIST CSF. Do not add `nist` merely to restate the government bundle's existing NIST 800-53 coverage (`skills/recon/SKILL.md:66-104`, `369-374`, `432-470`).
 
-Avoid relying on the natural-language default: the flags tables say all five phases, but the natural-language example says phases 1-2. Explicit selection makes your requested scope clear without changing the source. Conflicting flags and invalid profiles have no defined parser/error contract (`skills/recon/SKILL.md:35-49`, `1330-1332`).
+The current [Invocation Scope](../../../../skills/recon/SKILL.md#invocation-scope) table distinguishes the defaults: `/recon` without scope flags runs all five phases; natural-language requests without scope flags run phases 1-2. Explicit scope flags retain their documented meanings. Conflicting flags and invalid profiles still have no defined parser/error contract; this clarification does not establish one.
 
 ## Inspect outputs and protect the baseline
 

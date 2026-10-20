@@ -34,6 +34,26 @@
         "Not checked: Workflow execution, billing balances, repository-wide Actions permissions, branch protection, or other repository security settings."
       ]
     },
+    "code-health": {
+      "checkedAt": "2026-10-20T03:24:42.599Z",
+      "commit": "bd46b4f",
+      "uncommittedChanges": true,
+      "result": "issues",
+      "summary": "Rechecked the chosen fix: invocation defaults are now centralized and explicit. The large inline compliance catalog remains open by owner choice.",
+      "findings": [
+        "skills/recon/SKILL.md:432-1209 [low] The 778-line inline compliance section remains in the 1,383-line entrypoint. Owner chose to keep file splitting open; establish content-preservation/loading checks before extracting profile references."
+      ],
+      "evidence": [
+        "Scope: Re-check only the two recorded instruction-maintainability findings after the owner chose clarification and explicitly left file splitting open.",
+        "Loaded refactoring in report-only review; before editing, static characterization confirmed both existing modes, quick mode and targetless/combined examples.",
+        "Invocation Scope now owns defaults: slash commands without scope flags run five phases; natural-language requests without scope flags run phases 1-2.",
+        "Static assertions passed: source changes confined to scope/default wording; quick/deep meanings and every fenced command/report/metadata example unchanged.",
+        "All 778 Phase 3 lines remain byte-identical to HEAD; file length remains 1,383 lines. No profile files were moved or extracted.",
+        "README, context, glossary and workflow/usage guidance updated to match; 21 local links/anchors and git diff --check passed.",
+        "Historical source ledger was labeled explicitly; its old hashes were not presented as current-source evidence.",
+        "Not checked: Live host execution or model behavior equivalence. No automated runtime test/lint/build suite exists; no unrelated checklist re-audit."
+      ]
+    },
     "docs": {
       "checkedAt": "2026-10-20T02:19:51.328Z",
       "commit": "0c50054",
@@ -48,6 +68,29 @@
         "Python documentation assertions passed; bash -n passed for both installation snippets without executing them.",
         "git diff --check passed. No skill loaded for this documentation re-check.",
         "Not checked: Live installation, host command discovery, external research, or manual smoke-test execution; no broader documentation re-audit."
+      ]
+    },
+    "git-github": {
+      "checkedAt": "2026-10-20T03:10:41.454Z",
+      "commit": "bd46b4f",
+      "uncommittedChanges": false,
+      "result": "issues",
+      "summary": "GitHub remote, relevant ignore coverage and local-history blob sizes pass; main has no active branch protection or ruleset.",
+      "findings": [
+        ".github/CODEOWNERS:2 [medium] GitHub main is unprotected: protected=false, no rulesets or active branch rules. Add force-push/deletion protection at https://github.com/g-baskin/recon/settings/rules; keep CI disabled."
+      ],
+      "accepted": [
+        "CI remains intentionally unconfigured at the owner's request due to billing; this review does not request enabling workflows or CI-dependent merge checks."
+      ],
+      "evidence": [
+        "Scope: Git repository/remote, applicable ignore behavior, default-branch protection and blob sizes reachable from local refs.",
+        "git rev-parse, remote -v and status: valid repo, GitHub origin g-baskin/recon, clean working tree before checklist recording.",
+        "Read .gitignore, .github/CODEOWNERS, .github/AUTOMATION.md and existing checklist decisions; no skill loaded for this item.",
+        "gh API: default branch main, admin access available, protected=false; rulesets including parents=[] and rules/branches/main=[].",
+        "Read-only git check-ignore assertions: 10 local/environment/report cases and 7 intentional source/example/artwork exceptions passed.",
+        "git ls-files --cached --ignored --exclude-standard returned no tracked ignored files; no app build manifest/output identified.",
+        "git rev-list --objects --all plus cat-file checked 69 blobs; none >=10 MiB; largest PNGs are 2,657,619 and 2,202,580 bytes.",
+        "Not checked: Remote-only refs, LFS storage, reflogs/dangling objects or secret scanning. No runtime test/build/lint suite exists."
       ]
     },
     "naming": {
@@ -65,6 +108,26 @@
         "Exact source comparison passed: SKILL.md changes only the comparison.csv label to CSV export tables; filenames and output triggers are untouched.",
         "LICENSE matches HEAD byte-for-byte; related architecture text now acknowledges ADR-001; git diff --check passed.",
         "Not checked: Host execution, legal review or external URL availability. No runtime suite exists. No unrelated checklist items were re-audited."
+      ]
+    },
+    "secrets": {
+      "checkedAt": "2026-10-20T03:15:46.053Z",
+      "commit": "bd46b4f",
+      "uncommittedChanges": false,
+      "result": "pass",
+      "summary": "Gitleaks detected no credentials in 50 tracked working-tree files, 11 reachable commits or their messages; environment ignore checks passed. Host credential storage was not assessed.",
+      "findings": [],
+      "evidence": [
+        "Scope: Current tracked working-tree bytes, all locally reachable Git history and commit messages, environment exclusions, and repository credential-use patterns.",
+        "Loaded bulletproof in report-only mode and read its verification guide; repository is a Markdown skill with no credential-consuming application runtime.",
+        "Gitleaks 8.30.1 git --log-opts='--all --full-history -m': exit 0, 11 commits, zero candidates; clone is not shallow.",
+        "Gitleaks stdin scanned all 50 tracked files (5,074,076 bytes), including two binary byte streams, plus all commit messages: zero candidates; none dismissed.",
+        "Used built-in scanner rules, ignored inline allow comments, 100% redaction and JSON stdout only; no scan reports or config files written.",
+        "First working-tree attempt timed out at 20 seconds; complete rerun with a longer timeout passed.",
+        "Six sensitive/local git check-ignore cases and two example exceptions passed; no tracked env files or tracked ignored files found.",
+        "Read .gitignore, SKILL tool declarations and credential references, and CONTRIBUTING setup notes; references concern assessment instructions, not hardcoded credentials.",
+        "git status/diff confirmed only the pre-existing checklist change from the previous review before this record.",
+        "Not checked: Unfetched refs, reflogs/dangling objects, untracked local files, image OCR, provider/host stores or live credentials. No runtime test suite exists."
       ]
     }
   }

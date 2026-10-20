@@ -55,7 +55,7 @@ cp -r /path/to/recon/skills/recon .claude/skills/recon
 
 ## Usage
 
-### Full scan (default — all 5 phases, deep)
+### Full scan (slash-command default, all 5 phases, deep)
 ```
 /recon https://competitor1.com https://competitor2.com
 ```
@@ -105,7 +105,7 @@ cp -r /path/to/recon/skills/recon .claude/skills/recon
 /recon --deep --diff --phases 1,2 https://competitor.com
 ```
 
-### Natural language (also works)
+### Natural language (default: phases 1-2, research only)
 ```
 I just saw [tool/website/product] — what is this? Full breakdown.
 ```

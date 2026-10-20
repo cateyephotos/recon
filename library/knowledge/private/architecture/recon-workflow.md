@@ -29,7 +29,7 @@ The caller supplies targets and flags to the host. The host interprets them, ada
 | 4 | Pre-launch checklist with a second independent verification pass | `skills/recon/SKILL.md:1210-1231` |
 | 5 | IP protection for the user's own build, not the competitor's proprietary implementation | `skills/recon/SKILL.md:1235-1262` |
 
-Explicit `--phases 3,4,5` supports targetless build hardening. An external URL is therefore not mandatory for every invocation. The flags tables describe all five phases as the default and Phase 1 only for `--quick`; explicit `--phases` selects a subset (`skills/recon/SKILL.md:35-49`, `1296-1299`).
+Explicit `--phases 3,4,5` supports targetless build hardening. An external URL is therefore not mandatory for every invocation. The current [Invocation Scope](../../../../skills/recon/SKILL.md#invocation-scope) table defines separate defaults: `/recon` without scope flags runs all five phases; natural-language requests without scope flags run phases 1-2. `--quick` selects Phase 1, and explicit `--phases` selects a subset.
 
 Phase 3 defaults to GDPR, SOC 2 and OWASP. Profiles are selectors, not one identifier per framework name: `hipaa` includes HITRUST; `fedramp` includes NIST 800-53; `nist` selects NIST CSF. Consequently, the government bundle covers FedRAMP/NIST 800-53/CMMC without a separate `nist` selector. Adding `nist` expands its scope. The source also defines six named bundles, `all`, and comma-separated combinations (`skills/recon/SKILL.md:66-104`). These are assessment instructions, not certification or a legal-compliance determination.
 
@@ -61,7 +61,7 @@ The no-baseline path represents an ordinary first run. An explicit `--diff` with
 
 ### Source and edge ledger
 
-Source snapshot: inspected working tree on `main`, HEAD `0c5005462d63099de6d04d977207fcce3a03f22e`. Hashes pin actual bytes, including the README's installation, testing and Library navigation edits; HEAD alone does not identify that README snapshot.
+Historical source snapshot: inspected working tree on `main`, HEAD `0c5005462d63099de6d04d977207fcce3a03f22e`. Hashes pin those earlier bytes, including the README's installation, testing and Library navigation edits; HEAD alone does not identify that README snapshot. The current invocation-scope clarification is linked above and is not represented by these historical hashes.
 
 | Source | SHA-256 |
 |---|---|
@@ -89,7 +89,6 @@ A prior current report activates diff behavior even without `--diff`. The instru
 
 The source leaves important cases unsettled; these docs do not repair them:
 
-- The flags tables default to all five phases, but the natural-language invocation example says it triggers phases 1-2. Use explicit `--phases` rather than silently choosing one interpretation (`skills/recon/SKILL.md:35-49`, `1330-1332`).
 - Conflicting depth/phase flags, invalid selector handling, target-name normalization and the output folder name for targetless runs have no explicit resolution rules (`skills/recon/SKILL.md:31-104`, `132-143`, `1296-1299`).
 - Same-day dated archive collisions and explicit diff without a baseline remain unspecified (`skills/recon/SKILL.md:171`, `238-248`).
 - The metadata example omits compliance selection. Matching metadata alone cannot prove equivalent compliance scope across runs (`skills/recon/SKILL.md:146-163`).

@@ -14,5 +14,5 @@ Read CONTEXT.md before naming anything.
 - An existing target report activates diff behavior even without `--diff`. Archive it under `previous/RECON_REPORT_[date].md` before new research, then produce `DIFF_REPORT.md`; otherwise reruns lose their baseline. Same-day archive collision handling is unspecified.
 - Phase 3 runs the Shared Foundation before selected compliance modules. Framework labels are not independent profile IDs: `hipaa` includes HITRUST, `fedramp` includes NIST 800-53, while `nist` means NIST CSF. In particular, adding `nist` to the government bundle changes its scope rather than representing its existing NIST 800-53 coverage.
 - The `metadata.json` example omits compliance selection despite configurable profiles. Metadata alone cannot establish equivalent compliance scope between runs.
-- Invocation scope is internally inconsistent: the flags tables default to all five phases, but the natural-language example specifies phases 1–2. Explicit `--phases` avoids that ambiguity; do not silently normalize the two behaviors when changing invocation handling.
+- Invocation defaults are mode-specific: `/recon` without scope flags runs all five phases; natural-language requests without scope flags run phases 1-2. The skill's Invocation Scope table owns these defaults. Preserve the distinction when changing invocation handling.
 <!-- gg:init:end -->

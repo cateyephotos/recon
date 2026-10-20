@@ -30,15 +30,16 @@ Activate this protocol when the user says any of:
 
 ## FLAGS & OPTIONS
 
-Parse the user's input for these flags. If not provided, use defaults.
+Parse the user's input for flags. Scope flags are `--quick`, `--deep`, and `--phases`; when none is supplied, use the invocation-specific default below. Other flag defaults are unchanged.
 
-### Depth Control
+### Invocation Scope
 
-| Flag | Behavior | Default |
-|------|----------|---------|
-| `--quick` | Phase 1 only, surface-level scan. Business overview, basic tech stack, top competitors. Skip deep OSINT, security, and IP phases. | No |
-| `--deep` | Full 5-phase pipeline. Leave no stone unturned. | Yes (default) |
-| (no flag) | Full 5-phase pipeline | Yes |
+| Invocation / flag | Behavior | When used |
+|-------------------|----------|-----------|
+| `--quick` | Phase 1 only, surface-level scan. Business overview, basic tech stack, top competitors. Skip deep OSINT, security, and IP phases. | Explicit scope flag |
+| `--deep` | Full 5-phase pipeline. Leave no stone unturned. | Explicit scope flag |
+| `/recon` without scope flags | Full 5-phase pipeline | Slash-command default |
+| Natural-language request without scope flags | Phases 1-2, research only | Natural-language default |
 
 ### Phase Selection
 
@@ -46,7 +47,6 @@ Parse the user's input for these flags. If not provided, use defaults.
 |------|----------|---------|
 | `--phases 1,2` | Run only specified phases | `--phases 1,2` for research only |
 | `--phases 3,4,5` | Run only specified phases | `--phases 3,4,5` for build hardening |
-| (no flag) | Run all phases (or phase 1 only if `--quick`) | All 5 phases |
 
 ### Output Format
 
@@ -1278,7 +1278,7 @@ Return a structured report with clear sections for each phase:
 
 ## HOW TO INVOKE
 
-**Full protocol (all 5 phases, deep):**
+**Slash-command default (see [Invocation Scope](#invocation-scope)):**
 ```
 /recon https://competitor1.com https://competitor2.com
 ```
@@ -1329,7 +1329,7 @@ Return a structured report with clear sections for each phase:
 
 **Natural language (still works):**
 > "I just saw [tool/website/product] — what is this? Full breakdown."
-> Triggers phases 1-2 automatically
+> Uses the natural-language default in [Invocation Scope](#invocation-scope).
 
 ---
 

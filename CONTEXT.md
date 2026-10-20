@@ -8,7 +8,7 @@
 - **Build hardening**: Assessment of the own build through selected security, pre-launch, and IP-protection phases; it can run without an external target.
 - **Run**: One invocation of Recon with a selected scope. A run may examine several targets or assess the own build without an external target.
 - **Phase**: A numbered stage of the Recon pipeline. Phase selection determines which stages are requested; it is distinct from research depth.
-- **Depth**: The breadth and detail requested for research. Quick mode narrows the run to a surface-level Phase 1 scan; deep mode describes the full pipeline unless phases are explicitly selected.
+- **Depth**: The breadth and detail requested for research. Quick mode narrows the run to a surface-level Phase 1 scan; explicit `--deep` describes the full pipeline unless phases are explicitly selected. Without scope flags, the invocation mode determines the default scope.
 - **Framework**: A named compliance, privacy, or security standard evaluated by Phase 3. Avoid: using framework and profile as interchangeable terms.
 - **Profile**: An individual compliance selector that maps to framework coverage. One profile can cover several frameworks: `hipaa` includes HIPAA and HITRUST; `fedramp` includes FedRAMP and NIST 800-53; `nist` selects NIST CSF.
 - **Bundle**: A named preset selection of compliance coverage, such as `healthcare` or `government`. Avoid: calling a preset bundle an individual profile.
